@@ -5,5 +5,4 @@ if __name__ == '__main__':
     Fibonacci.fib(9)
     Fibonacci.fib(20)
     Fibonacci.fib(30)
-    #test
     #test smee
