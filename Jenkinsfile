@@ -32,14 +32,14 @@ pipeline {
                     agent { label "runner1" }
                     steps {
                         sh 'cd CMakeFiles/runTests.dir; lcov --capture --directory . --output-file coverage.info; genhtml coverage.info --output-directory out'
-                        publishHTML target: [
+                        / *publishHTML target: [
                             allowMissing: false,
                             alwaysLinkToLastBuild: false,
                             keepAll: true,
                             reportDir: 'CMakeFiles/runTests.dir/out',
                             reportFiles: 'index.html',
                             reportName: 'RCov Report'
-                        ]
+                        ] */
                     }
                 }
                 }
