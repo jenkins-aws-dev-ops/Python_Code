@@ -2,7 +2,7 @@
 open(HDL,"curl https://www.wsj.com/tech/ai/microsoft-needs-a-better-seat-at-openais-table-64bc3c3b?mod=tech_lead_story | pandoc -f html -t plain |");
    while($tmp=<HDL>){
       chop $tmp;
-      ##tets
+      ## ##tets
       next if $tmp =~ /s+/;
       next if $tmp eq "";
       @arrTmp = split('\s+',$tmp);
