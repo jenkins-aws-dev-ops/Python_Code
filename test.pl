@@ -21,6 +21,7 @@ foreach my $k (sort { $uniqWord{$a} <=> $uniqWord{$b}} keys %uniqWord){
    print "$k";
    for($i=0;$i<$uniqWord{$k};$i++){
       print "*";
+      print "hello perl";
    }
    print "\n";
 }
