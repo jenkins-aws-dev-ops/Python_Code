@@ -1,5 +1,5 @@
 pipeline {
-    agent { label "runner1" } 
+    agent { label "runner2" } 
     parameters {
         choice(name: 'Branch',
         choices:'main\nSP_1\nSP_2\n')
@@ -12,7 +12,7 @@ pipeline {
         stage('Parallel jobs') {
             parallel {
                 stage('Build') {
-                    agent { label "runner1" }
+                    agent { label "runner2" }
                     steps {
                         echo "Compiling..."
                         sh 'cmake .'
@@ -22,14 +22,14 @@ pipeline {
                 stage ('Coverage') { 
                 stages {
                 stage('gcov run') {
-                    agent { label "runner1" }
+                    agent { label "runner2" }
                     steps {
                         sh 'hostname'
                         sh './runTests'
                     }
                 }
                 stage('genHTML report') {
-                    agent { label "runner1" }
+                    agent { label "runner2" }
                     steps {
                         sh 'cd CMakeFiles/runTests.dir; lcov --capture --directory . --output-file coverage.info; genhtml coverage.info --output-directory out'
                         publishHTML target: [
@@ -45,13 +45,13 @@ pipeline {
                 }
                 }
                 stage('Valgrind') {
-                    agent { label "runner1" }
+                    agent { label "runner2" }
                     steps {
                         sh 'valgrind --leak-check=yes ./runTests'
                     }
                 }
                 stage('Coverity') {
-                    agent { label "runner1" }
+                    agent { label "runner2" }
                     steps {
                         sh 'hostname'
                         echo "Run Coverity"
@@ -67,7 +67,7 @@ pipeline {
         stage('Full regression') {
             parallel {
                 stage('Suite 1') {
-                    agent { label "runner1" }
+                    agent { label "runner2" }
                     steps {
                         echo "Hello ${params.all_choices}"
                         sh '/usr/bin/python3 --version'
@@ -75,7 +75,7 @@ pipeline {
                     }
                 }
                 stage('Suite 2') {
-                    agent { label "runner1" }
+                    agent { label "runner2" }
                     steps {
                         sleep 1
                         sh '/usr/bin/python3 testP.py'
