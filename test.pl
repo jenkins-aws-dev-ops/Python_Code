@@ -19,7 +19,7 @@ close HDL;
 #   print "$k = $v\n"
 #}
 foreach my $k (sort { $uniqWord{$a} <=> $uniqWord{$b}} keys %uniqWord){
-   print "$k";
+   print "$k\n";
    for($i=0;$i<$uniqWord{$k};$i++){
       print "*";
       print "hello perl";
