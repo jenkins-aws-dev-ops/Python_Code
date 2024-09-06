@@ -24,7 +24,8 @@ pipeline {
                 stage('gcov run') {
                     agent { label "runner2" }
                     steps {
-                        sh 'hostname'
+                        echo 'run on: '
+                        sh 'curl http://checkip.amazonaws.com'
                         sh './runTests'
                     }
                 }
