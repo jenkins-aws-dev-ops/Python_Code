@@ -51,11 +51,12 @@ pipeline {
                     }
                 }
                 
-                stage('Build HelloWorld') {
+                stage('Build calc') {
                     agent { label "runner2" }
                     steps {
                         echo "Compiling hello"
                         sh "cd hello; make all"
+                        sh "cd hello; aws s3 cp helloworld s3:://s3-bucket-artiface-v1/helloworld"
                     }
                 }
                 stage('Coverity') {
