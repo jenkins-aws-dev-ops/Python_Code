@@ -55,7 +55,7 @@ pipeline {
                     agent { label "runner2" }
                     steps {
                         echo "Compiling hello"
-                        sh "cd hello; make"
+                        sh "cd hello; make all"
                     }
                 }
                 stage('Coverity') {
