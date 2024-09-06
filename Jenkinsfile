@@ -57,7 +57,7 @@ pipeline {
                     steps {
                         echo "Compiling hello"
                         sh "cd hello; make all"
-                        sh "cd hello; aws s3 cp helloworld s3:://s3-bucket-artiface-v1/helloworld"
+                        sh "cd hello; aws s3 cp helloworld s3://s3-bucket-artiface-v1/helloworld"
                     }
                 }
                 stage('Coverity') {
