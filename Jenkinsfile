@@ -50,6 +50,14 @@ pipeline {
                         sh 'valgrind --leak-check=yes ./runTests'
                     }
                 }
+                
+                stage('Build HelloWorld') {
+                    agent { label "runner2" }
+                    steps {
+                        echo "Compiling hello"
+                        sh "cd hello; make"
+                    }
+                }
                 stage('Coverity') {
                     agent { label "runner2" }
                     steps {
