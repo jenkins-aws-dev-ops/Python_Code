@@ -11,7 +11,7 @@ with open('field_value.txt') as all:
         val_conv = literal_eval(a_split[1])
         fv_hash[a_split[0]] = val_conv
 
-#print("age\tprincipal\ts_gain\t       c_gain\t self_curr_SSI\t   spouse_curr_SSI\t withdraw")
+#print("Age\tprincipal\ts_gain\t       c_gain\t self_curr_SSI\t   spouse_curr_SSI\t withdraw")
 self_prev_SSI = 0
 spouse_prev_SSI = 0
 spouse_curr_SSI = 0
