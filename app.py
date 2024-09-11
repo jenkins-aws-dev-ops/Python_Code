@@ -5,4 +5,5 @@ else:
     x = x+1
 x = x+1
 print(x)
+print(x)
 print("test git hook1")
