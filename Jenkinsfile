@@ -75,17 +75,9 @@ pipeline {
                     }
                 }
                 stage('Suite 2') {
-                    agent { label "local_vm" }
                     steps {
                         sleep 1
-                        sh '/usr/bin/python3 testP.py'
-                        sh 'hostname'
-                    }
-                }
-                stage('Suite 3') {
-                    steps {
-                        sleep 1
-                        sh '/usr/bin/python3 testP.py'
+                        sh 'export PATH=/Users/trido/.local/bin:${PATH}; pytest'
                     }
                 }
             }

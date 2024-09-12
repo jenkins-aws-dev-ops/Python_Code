@@ -1,5 +1,3 @@
-word = input("Enter a word ")
-#comment else
 def is_palin(word):
     ori = []
     for w in word:
@@ -17,6 +15,6 @@ def is_palin(word):
             pal = True
             l -= 1
     if(pal):
-        print(f'{word} is a palindromes')
+        return True
     else:
-        print(f'{word} is not a palindromes')
+        return False
