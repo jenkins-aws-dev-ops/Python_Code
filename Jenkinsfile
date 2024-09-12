@@ -66,7 +66,7 @@ pipeline {
         }
         stage('Full regression') {
             parallel {
-                stage('Suite 1') {
+                stage('Checkversion') {
                     agent { label "local_vm" }
                     steps {
                         echo "Hello ${params.all_choices}"
@@ -74,10 +74,10 @@ pipeline {
                         sh 'hostname'
                     }
                 }
-                stage('Suite 2') {
+                stage('Run pytest') {
                     steps {
                         sleep 1
-                        sh 'pytest'
+                        sh 'pytest pytest --junitxml=test_result.xml'
                     }
                 }
             }
