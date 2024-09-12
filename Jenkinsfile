@@ -77,7 +77,7 @@ pipeline {
                 stage('Run pytest') {
                     steps {
                         sleep 1
-                        sh 'pytest pytest --junitxml=test_result.xml'
+                        sh 'pytest --junitxml=test_result.xml'
                     }
                 }
             }
