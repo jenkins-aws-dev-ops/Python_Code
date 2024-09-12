@@ -77,7 +77,7 @@ pipeline {
                 stage('Suite 2') {
                     steps {
                         sleep 1
-                        sh 'export PATH=/Users/trido/.local/bin:${PATH}; pytest'
+                        sh 'export PATH=/home/tri/.local/bin:${PATH}; pytest'
                     }
                 }
             }
