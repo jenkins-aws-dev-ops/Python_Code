@@ -93,6 +93,7 @@ pipeline {
         stage('Final QA Test') {
             steps {
                 echo "QA Test ${params.branch}"
+                junit "test_result.xml"
             }
         }
         stage('Package & Install Test') {
