@@ -3,7 +3,7 @@ int
 main (void)
 {
   int i;
-
+  // test
   for (i = 1; i < 7; i++)
     {
       if (i % 3 == 0)
