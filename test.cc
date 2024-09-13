@@ -3,7 +3,7 @@ int
 main (void)
 {
   int i;
-
+  printf("ttest");
   for (i = 1; i < 7; i++)
     {
       if (i % 3 == 0)
