@@ -39,5 +39,5 @@ def test_cal():
     assert calc(2,3).total() == 5
 @pytest.mark.parametrize("test_input,expected",[('kayak',True),('bob',True),('morning',False)])
 def test_palin(test_input,expected):
-    record_property("palidrom", 1
+    record_property("palidrom", 1)
     assert is_palin(test_input) == expected
